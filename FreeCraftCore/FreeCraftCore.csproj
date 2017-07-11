@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{273A27D5-8D5E-48B4-9867-8E2D39D4C280}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FreeCraftCore</RootNamespace>
+    <AssemblyName>FreeCraftCore</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\..\..\..\Visual Studio 2017\dlls\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Generic.Math">
+      <HintPath>..\..\..\..\Visual Studio 2017\dlls\Generic.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Iconic.Zlib.Netstandard">
+      <HintPath>..\..\..\..\Visual Studio 2017\dlls\Iconic.Zlib.Netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=7.1.0.0, Culture=neutral, PublicKeyToken=db26512813023263, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.Redist.7.1\lib\net40\JetBrains.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Reflect.Extent">
+      <HintPath>..\..\..\..\Visual Studio 2017\dlls\Reflect.Extent.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Reactive, Version=4.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.4.0.0-preview00001\lib\net45\System.Reactive.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Context" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.24.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Tpl.Dataflow.4.5.24\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="FreecraftCore.API.Client.Auth\Login\AuthenticationDetailsInfo.cs" />
+    <Compile Include="FreecraftCore.API.Client.Auth\Login\IAuthenticationDetailsProvider.cs" />
+    <Compile Include="FreecraftCore.API.Client.Common\Session\ISessionKeyProvider.cs" />
+    <Compile Include="FreecraftCore.API.Client.Common\Session\ISessionKeyStore.cs" />
+    <Compile Include="FreecraftCore.API.Common.Addon\AddonChecksumInfo.cs" />
+    <Compile Include="FreecraftCore.API.Common.Addon\AddonChecksumsContainer.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Auth\AccountAuthorizationFlags.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Auth\AuthenticationResult.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Auth\GameType.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Auth\LocaleType.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Auth\LoginResult.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Auth\OperatingSystemType.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Auth\PlatformType.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Auth\ProtocolVersion.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Auth\SessionAuthenticationResult.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Common\ClientBuild.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Common\ExpansionType.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Realm\RealmFlags.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Realm\RealmIdentification.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Realm\RealmInfo.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Realm\RealmInfo\DefaultRealmInformation.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Realm\RealmInfo\IRealmInformation.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Realm\RealmInfo\RealmBuildInformation.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Realm\RealmInfo\RealmCompleteInformation.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Realm\RealmInfo\RealmEndpoint.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\Realm\RealmType.cs" />
+    <Compile Include="FreecraftCore.API.Common.Auth\SRP\SRPToken.cs" />
+    <Compile Include="FreecraftCore.API.Common.Character\CharacterClass.cs" />
+    <Compile Include="FreecraftCore.API.Common.Character\CharacterGender.cs" />
+    <Compile Include="FreecraftCore.API.Common.Character\CharacterRace.cs" />
+    <Compile Include="FreecraftCore.API.Common.Character\SelectionScreen\CharacterScreenBag.cs" />
+    <Compile Include="FreecraftCore.API.Common.Character\SelectionScreen\CharacterScreenCharacter.cs" />
+    <Compile Include="FreecraftCore.API.Common.Character\SelectionScreen\CharacterScreenItem.cs" />
+    <Compile Include="FreecraftCore.API.Common.Character\SelectionScreen\CharacterScreenPetInfo.cs" />
+    <Compile Include="FreecraftCore.API.Common.Character\SelectionScreen\TempLocationStructure.cs" />
+    <Compile Include="FreecraftCore.API.Common.Chat\ChatLanguage.cs" />
+    <Compile Include="FreecraftCore.API.Common.Chat\ChatMessageType.cs" />
+    <Compile Include="FreecraftCore.API.Common.Chat\ChatStateTag.cs" />
+    <Compile Include="FreecraftCore.API.Common.Chat\Emote\TextEmote.cs" />
+    <Compile Include="FreecraftCore.API.Common.Chat\Message\Network\DefaultNetworkChatMessage.cs" />
+    <Compile Include="FreecraftCore.API.Common.Chat\Message\Network\NetworkChatMessage.cs" />
+    <Compile Include="FreecraftCore.API.Common.Chat\Message\Network\UnhandledChatTypeMessage.cs" />
+    <Compile Include="FreecraftCore.API.Common.Chat\Message\Player\ChannelPlayerChatMessage.cs" />
+    <Compile Include="FreecraftCore.API.Common.Chat\Message\Player\DefaultPlayerChatMessage.cs" />
+    <Compile Include="FreecraftCore.API.Common.Chat\Message\Player\GuildPlayerChatMessage.cs" />
+    <Compile Include="FreecraftCore.API.Common.Chat\Message\Player\PlayerChatMessage.cs" />
+    <Compile Include="FreecraftCore.API.Common.Chat\Message\Player\WhisperPlayerChatMessage.cs" />
+    <Compile Include="FreecraftCore.API.Common.Core\Update\ObjectUpdateFlags.cs" />
+    <Compile Include="FreecraftCore.API.Common.Core\Update\ObjectUpdateType.cs" />
+    <Compile Include="FreecraftCore.API.Common.Core\Update\UpdateBlockChunk.cs" />
+    <Compile Include="FreecraftCore.API.Common.Entity.Identity\EntityTypeId.cs" />
+    <Compile Include="FreecraftCore.API.Common.Entity.Identity\Guid\BaseGuid.cs" />
+    <Compile Include="FreecraftCore.API.Common.Entity.Identity\Guid\HighGuid.cs" />
+    <Compile Include="FreecraftCore.API.Common.Entity.Identity\Guid\ObjectGuid.cs" />
+    <Compile Include="FreecraftCore.API.Common.Entity.Identity\Guid\PackedGuid.cs" />
+    <Compile Include="FreecraftCore.API.Common.Movement\Enums\MovementFlags2.cs" />
+    <Compile Include="FreecraftCore.API.Common.Movement\Enums\SplineEvaluationMode.cs" />
+    <Compile Include="FreecraftCore.API.Common.Movement\Enums\SplineMoveFlags.cs" />
+    <Compile Include="FreecraftCore.API.Common.Movement\Enums\UnitMoveType.cs" />
+    <Compile Include="FreecraftCore.API.Common.Movement\IMovementSpeedLookupTable.cs" />
+    <Compile Include="FreecraftCore.API.Common.Warden\WardenCheckOperationType.cs" />
+    <Compile Include="FreecraftCore.API.Common.Warden\WardenSubOperationCodeClient.cs" />
+    <Compile Include="FreecraftCore.API.Common.Warden\WardenSubOperationCodeServer.cs" />
+    <Compile Include="FreecraftCore.Crypto.BigInteger\BigInteger.cs" />
+    <Compile Include="FreecraftCore.Crypto.BigInteger\BigIntegerBuilder.cs" />
+    <Compile Include="FreecraftCore.Crypto.BigInteger\BigIntegerExtensions.cs" />
+    <Compile Include="FreecraftCore.Crypto.BigInteger\BigNumber.cs" />
+    <Compile Include="FreecraftCore.Crypto.BigInteger\NumberPort.cs" />
+    <Compile Include="FreecraftCore.Crypto.BigInteger\NumericsHelper.cs" />
+    <Compile Include="FreecraftCore.Crypto.Common\ICryptoServiceProvidedExtensions.cs" />
+    <Compile Include="FreecraftCore.Crypto.Common\ICryptoServiceProvider.cs" />
+    <Compile Include="FreecraftCore.Crypto.Packet\ISessionPacketCryptoService.cs" />
+    <Compile Include="FreecraftCore.Crypto.Packet\SessionPacketCryptoService.cs" />
+    <Compile Include="FreecraftCore.Crypto.RC4\IRC4CryptoServiceProvider.cs" />
+    <Compile Include="FreecraftCore.Crypto.RC4\RC4CryptoServiceProvider.cs" />
+    <Compile Include="FreecraftCore.Crypto.RC4\RC4DropNCryptoServiceProvider.cs" />
+    <Compile Include="FreecraftCore.Crypto.Session\WoWSessionDigestCryptoProvider.cs" />
+    <Compile Include="FreecraftCore.Crypto.SRP6\WoWSRP6CryptoServiceProvider .cs" />
+    <Compile Include="FreecraftCore.Crypto.SRP6\WoWSRP6PublicComponentHashServiceProvider.cs" />
+    <Compile Include="FreecraftCore.Crypto.Stream\CryptoStreamReaderExtensions.cs" />
+    <Compile Include="FreecraftCore.Crypto.Stream\CryptoStreamService.cs" />
+    <Compile Include="FreecraftCore.Crypto.Stream\Reader\Async\LazyCryptoStreamReaderAsync.cs" />
+    <Compile Include="FreecraftCore.Crypto.Stream\Reader\CryptoStreamReader.cs" />
+    <Compile Include="FreecraftCore.Crypto.Stream\Reader\LazyCryptoStreamReader.cs" />
+    <Compile Include="FreecraftCore.Crypto.Stream\Reader\OneTimeCryptoStreamReader.cs" />
+    <Compile Include="FreecraftCore.Crypto.Stream\Writer\CryptoStreamWriter.cs" />
+    <Compile Include="FreecraftCore.Crypto.Stream\Writer\OneTimeCryptoStreamWriter.cs" />
+    <Compile Include="FreecraftCore.Crypto.Stream\Writer\RealtimeCryptoStreamWriter.cs" />
+    <Compile Include="FreecraftCore.Handlers.Auth.Client\Handlers\AuthenticationLogonChallengeResponseMessageHandler.cs" />
+    <Compile Include="FreecraftCore.Handlers.Auth.Client\Handlers\AuthenticationLogonProofResponseMessageHandler.cs" />
+    <Compile Include="FreecraftCore.Handlers.Auth.Client\Handlers\RealmListResponseMessageHandler.cs" />
+    <Compile Include="FreecraftCore.Handlers.Auth\Context\AuthenticationNetworkMessageContext.cs" />
+    <Compile Include="FreecraftCore.Handlers.Auth\Handlers\AuthenticationMessageHandler.cs" />
+    <Compile Include="FreecraftCore.Handlers.Auth\Handlers\AuthenticationMessageHandlerAsync.cs" />
+    <Compile Include="FreecraftCore.Handlers.Auth\Services\AuthenticationMessageHandlerService.cs" />
+    <Compile Include="FreecraftCore.Handlers.Common\Attribute\AuthenticationMessageHandlerAttribute.cs" />
+    <Compile Include="FreecraftCore.Handlers.Common\Handlers\MessageHandlerService.cs" />
+    <Compile Include="FreecraftCore.Handlers.Common\Services\IHandlerRegisterService.cs" />
+    <Compile Include="FreecraftCore.Handlers.Common\Services\IMessageHandlerFactory.cs" />
+    <Compile Include="FreecraftCore.Handlers.Game\Context\GameNetworkMessageContext.cs" />
+    <Compile Include="FreecraftCore.Handlers.Game\Handlers\GameMessageHandler.cs" />
+    <Compile Include="FreecraftCore.Handlers.Game\Handlers\GameMessageHandlerAsync.cs" />
+    <Compile Include="FreecraftCore.Handlers.Game\Services\GameMessageHandlerService.cs" />
+    <Compile Include="FreecraftCore.Network.Common\Context\INetworkConnectionContext.cs" />
+    <Compile Include="FreecraftCore.Network.Common\Context\NetworkApplicationType.cs" />
+    <Compile Include="FreecraftCore.Network.Common\Locking\GlobalLockingPolicy.cs" />
+    <Compile Include="FreecraftCore.Network.Common\Locking\INetworkLockingPolicy.cs" />
+    <Compile Include="FreecraftCore.Network.Common\Locking\LocklessLockingPolicy.cs" />
+    <Compile Include="FreecraftCore.Network.Common\Locking\ProtocolLockingPolicy.cs" />
+    <Compile Include="FreecraftCore.Network.Common\Services\IDisconnectable.cs" />
+    <Compile Include="FreecraftCore.Network.Common\Services\INetworkMessageSendingService.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Context\IMessageContextBuilder.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Context\INetworkMessageContext.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Context\INetworkMessageContextBuilder.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Context\INetworkMessageContextBuilderFactory.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Extensions\PipelineRegisterationOptionsExtensions.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Listeners\Handler\INetworkMessageContextPipelineListener.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Listeners\Handler\INetworkMessageContextPipelineListenerAsync.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Listeners\Handler\NetworkMessageContextState.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Listeners\INetworkInputPipelineListenerAsync.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Listeners\IPipelineListener.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Listeners\IPipelineListenerAsync.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Listeners\ReaderInputPipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\AggregateOptionsWithOrderStrategyDecorated.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\Flags\IPipelineTypeFlagsMutatable.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\Flags\IPipelineTypeFlagsProvider.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\Flags\IPipelineTypeFlagsStrategy.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\Flags\Pipeline\HeaderPipeline.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\Flags\Pipeline\PayloadPipeline.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\ICompleteOptionsReadable.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\NetworkPipelineTypes.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\Ordering\DefaltPipelineOrder.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\Ordering\IBuiltPipelineOptions.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\Ordering\IPipelineOrderingStrategy.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\Ordering\NetworkPipelineRegisterationOrder.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\Ordering\OnBottom.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\Ordering\OnTop.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\PipelineRegisterationOptionsWithOrder.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Options\UnorderedPipelineRegisterationOptions.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Services\INetworkInputPipelineRegister.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Services\INetworkMessageContextFactory.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Services\INetworkMessageWriterHandler.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Services\WireNetworkInputPipelineService.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Services\WireReaderInputPipelineService.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.API\Services\WireWriterInputPipelineService.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Auth\Base\AuthenticationWireReaderPipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Auth\Base\AuthenticationWireWriterPipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Auth\Components\Reading\InsertAuthPayloadDestinationCodePipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Auth\Components\Writing\AuthenticationHeaderWritingPipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Auth\Extensions\AuthenticationPipelineComponentRegisterationExtensions.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Auth\Services\AuthenticationNetworkMessageContextBuilderFactory.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Auth\Services\AuthenticationWireReaderInputPipelineService.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Auth\Services\AuthenticationWireWriterInputPipelineService.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Game.Client\Components\Writing\GameOutgoingClientPacketPipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Game.Client\Extensions\GameClientPipelineComponentRegisterationExtensions.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Game\Base\GameWireReaderPipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Game\Base\GameWireWriterPipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Game\Extensions\GamePipelineComponentRegisterationExtensions.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Game\Services\GameNetworkMessageContextBuilderFactory.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Game\Services\GameWireReaderInputPipelineService.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Game\Services\GameWireWriterInputPipelineService.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Generic\Base\WireReaderPipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Generic\Base\WireWriterPipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Generic\Components\Reading\ARC4LazyStreamReadingPipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Generic\Components\Reading\HeaderReadingPipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Generic\Components\Reading\OperationCodeReinsertPipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Generic\Components\Reading\PayloadReadingPipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Generic\Components\Reading\PayloadSizingStreamInsertionPipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Generic\Components\Reading\PeekSupportReadingPipelineComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Generic\Components\Writing\PayloadWritingComponent.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Generic\Context\DefaultNetworkMessageContext.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Generic\Context\DefaultNetworkMessageContextBuilder.cs" />
+    <Compile Include="FreecraftCore.Network.Pipeline.Generic\Extensions\GenericPipelineComponentRegisterationExtensions.cs" />
+    <Compile Include="FreecraftCore.Network.Routing\Extensions\RouteConfigurationServiceExtensions.cs" />
+    <Compile Include="FreecraftCore.Network.Routing\Options\RoutingRegisterOptions.cs" />
+    <Compile Include="FreecraftCore.Network.Routing\Protocol\AuthenticationMessageProtocol.cs" />
+    <Compile Include="FreecraftCore.Network.Routing\Protocol\GameMessageProtocol.cs" />
+    <Compile Include="FreecraftCore.Network.Routing\Protocol\IMessageProtocolStrategy.cs" />
+    <Compile Include="FreecraftCore.Network.Routing\Protocol\NoneMessageProtocol.cs" />
+    <Compile Include="FreecraftCore.Network.Routing\Routing\IMessageRouteRegister.cs" />
+    <Compile Include="FreecraftCore.Network.Routing\Routing\IMessageRoutingStrategy.cs" />
+    <Compile Include="FreecraftCore.Network.Routing\Routing\MessageEnqueueRoutingStrategy.cs" />
+    <Compile Include="FreecraftCore.Network.Routing\Service\RouteConfigurationService.cs" />
+    <Compile Include="FreecraftCore.Packet.Auth\Header\AuthenticationPacketHeader.cs" />
+    <Compile Include="FreecraftCore.Packet.Auth\Header\IAuthenticationPacketHeader.cs" />
+    <Compile Include="FreecraftCore.Packet.Auth\Packet\AuthenticationPacket.cs" />
+    <Compile Include="FreecraftCore.Packet.Auth\Packet\IAuthenticationPacket.cs" />
+    <Compile Include="FreecraftCore.Packet.Auth\Payloads\AuthLogonChallengeRequest.cs" />
+    <Compile Include="FreecraftCore.Packet.Auth\Payloads\AuthLogonChallengeResponse.cs" />
+    <Compile Include="FreecraftCore.Packet.Auth\Payloads\AuthLogonProofRequest.cs" />
+    <Compile Include="FreecraftCore.Packet.Auth\Payloads\AuthLogonProofResponse.cs" />
+    <Compile Include="FreecraftCore.Packet.Auth\Payloads\AuthRealmListRequest.cs" />
+    <Compile Include="FreecraftCore.Packet.Auth\Payloads\AuthRealmListResponse.cs" />
+    <Compile Include="FreecraftCore.Packet.Auth\Payloads\IAuthenticationPayload.cs" />
+    <Compile Include="FreecraftCore.Packet.Auth\Payloads\Proof\ILogonProofResult.cs" />
+    <Compile Include="FreecraftCore.Packet.Auth\Payloads\Proof\LogonProofFailureTokenInvalid.cs" />
+    <Compile Include="FreecraftCore.Packet.Auth\Payloads\Proof\LogonProofSuccess.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\Attributes\AuthenticationPayloadAttribute.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\Attributes\GamePayloadOperationCodeAttribute.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\Attributes\ProtocolGroupingAttribute.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\Extensions\IOperationCodeProvidableExtensions.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\Extensions\IProtocolGroupableExtensions.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\OpCodes\AuthOperationCode.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\OpCodes\AuthOperationDestinationCode.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\OpCodes\NetworkOperationCode.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\OpCodes\ProtocolCode.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\Structures\IHeaderPayloadSizeable.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\Structures\IMessageVerifyable.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\Structures\INetworkPacket.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\Structures\IOperationCodeProvidable.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\Structures\IOperationIdentifable.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\Structures\IProtocolGroupable.cs" />
+    <Compile Include="FreecraftCore.Packet.Common\Verification\EnumVerificationUtil.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Auth\Packets\AuthenticateSessionRequest.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Auth\Packets\AuthenticateSessionResponse.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Auth\Packets\SessionAuthChallengeEvent.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.CharacterScreen\Packets\CharacterListRequest.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.CharacterScreen\Packets\CharacterListResponse.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.CharacterScreen\Packets\CharacterLoginRequest.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Chat\Packets\ChatMessageEvent.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Chat\Packets\ChatMessageRequest.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Chat\Packets\EmoteChatMessageRequest.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Client\Headers\Incoming\IncomingClientLargePacketHeader.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Client\Headers\Incoming\IncomingClientPacketHeader.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Client\Headers\Incoming\IncomingClientSmallPacketHeader.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Client\Headers\Outgoing\OutgoingClientPacketHeader.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Common\GamePacket.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Common\Header\IGamePacketHeader.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Common\Payload\GamePayload.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Common\Payload\IGamePacketPayload.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Common\Payload\UnknownGamePayload.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Core\NameQuery\KnownNameQueryResult.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Core\NameQuery\NameQueryRequest.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Core\NameQuery\NameQueryResponse.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Core\NameQuery\NameQueryResult.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Core\NameQuery\UnknownNameQueryResult.cs" />
+    <Compile Include="FreecraftCore.Packet.Game.Warden\Server\WardenPayload.cs" />
+    <Compile Include="FreecraftCore.Serializer.API.Service\Async\ISerializationServiceAsync.cs" />
+    <Compile Include="FreecraftCore.Serializer.API.Service\Extensions\ISerializationContractRegisterExtensions.cs" />
+    <Compile Include="FreecraftCore.Serializer.API.Service\ISerializationContractRegister.cs" />
+    <Compile Include="FreecraftCore.Serializer.API.Service\ISerializationService.cs" />
+    <Compile Include="FreecraftCore.Serializer.API.Service\ISerializerService.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Context\ContextKeyOverrideDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Context\ContextRequirementOverrideDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Context\ContextTargetOverrideDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Context\ContextTypeFlags.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Context\ISerializableTypeContext.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Context\Keys\ContextualSerializerLookupKey.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Context\Keys\IContextKey.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Context\Keys\IContextualSerializerLookupKeyFactory.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Context\Keys\NoContextKey.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Context\Keys\SendSizeContextKey.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Context\Keys\SizeContextKey.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Context\MemberInfoBasedSerializationContext.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Context\SerializationContextRequirement.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Context\TypeBasedSerializationContext.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Decorators\DecoratorHandler.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Decorators\ISerializerDecoraterHandler.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Extensions\IContextualSerializerProviderExtensions.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Extensions\IGeneralSerializerProviderExtensions.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Extensions\ISerializableTypeContextExtensions.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Extensions\MonoExtensions.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Reflection\Async\IMemberSerializationMediatorAsync.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Reflection\IMemberSerializationMediator.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Reflection\IMemberSerializationMediatorFactory.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Reflection\LambdabasedDeserializationPrototyeFactory.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Reflection\MemberSerializationMediatorFactory.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Reflection\Serialization\DefaultMemberSerializationMediator.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Reflection\Serialization\DisableReadMemberSerializationMediatorDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Reflection\Serialization\DisableWriteMemberSerializationMediatorDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Reflection\Serialization\MemberSerializationMediator.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Serializers\Async\ITypeSerializerStrategyAsync.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Serializers\IObjectByteConverter.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Serializers\IObjectByteReader.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Serializers\IRuntimePolymorphicRegisterable.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Serializers\ITypeSerializerStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Serializers\SharedBufferTypeSerializer.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Serializers\SimpleTypeSerializerStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Services\IContextualSerializerProvider.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Services\IDeserializationPrototypeFactory.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Services\IGeneralSerializerProvider.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Services\ISerializerStrategyFactory.cs" />
+    <Compile Include="FreecraftCore.Serializer.API\Services\ISerializerStrategyRegistry.cs" />
+    <Compile Include="FreecraftCore.Serializer.Compression\Decorators\CompressionTypeSerializerStrategyDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.Core\Serialization\Services\ContextLookupKeyFactoryService.cs" />
+    <Compile Include="FreecraftCore.Serializer.Core\Serialization\Services\DefaultSerializerStrategyFactory.cs" />
+    <Compile Include="FreecraftCore.Serializer.Core\Serialization\Services\SerializerStrategyProvider.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Array\ArraySerializerDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Array\FixedSizeCollectionSizeStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Array\FixedSizeReversedByteArraySerializerDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Array\GenericCollectionSizeStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Array\ICollectionSizeStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Array\ICollectionSizeStrategyAsync.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Array\Int32ArraySerializerDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Complex\ComplexTypeSerializer.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Complex\ComplexTypeSerializerDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Complex\SubType\GenericChildKeyStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Complex\SubType\IChildKeyStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Complex\SubType\IChildKeyStrategyAsync.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Complex\SubType\SubComplexTypeSerializer.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Complex\SubType\SubComplexTypeSerializerDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Complex\SubType\SubComplexTypeWithFlagsSerializerDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\EndianReverseDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Enum\EnumSerializerDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\Enum\EnumStringSerializerDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\String\Async\IStringSizeStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\String\DontTerminateStringSerializerDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\String\FixedSizeStringSizeStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\String\IStringSizeStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\String\ReverseStringSerializerDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\String\SizeIncludedStringSizeStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Decorators\String\SizeStringSerializerDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Handlers\ArraySerializerDecoratorHandler.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Handlers\ComplexTypeSerializerDecoratorHandler.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Handlers\EnumSerializerDecoratorHandler.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Handlers\PrimitiveTypeSerializerDecoratorHandler.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Handlers\SpecialComplexTypeSerializerDecoratorhandler.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Handlers\StringSerializerDecoratorHandler.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Handlers\SubComplexTypeSerializerDecoratorHandler.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Reflection\MemberSerializationMediatorCollection.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\Reflection\TypeMemberParsedTypeContextCollection.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Decorators\SerializerDecoratorHandlerFactory.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Primitives\FreecraftCoreSerializerKnownTypesPrimitivesMetadata.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Primitives\Strategies\BoolSerializerStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Primitives\Strategies\ByteSerializerStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Primitives\Strategies\DoubleSerializerStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Primitives\Strategies\FloatSerializerStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Primitives\Strategies\Int16SerializerStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Primitives\Strategies\Int32SerializerStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Primitives\Strategies\Int64SerializerStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Primitives\Strategies\SbyteSerializerStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Primitives\Strategies\StringSerializerStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Primitives\Strategies\UInt16SerializerStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Primitives\Strategies\UInt32SerializerStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Primitives\Strategies\UInt64SerializerStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Special\Decorators\BitArraySerializerStrategyDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.KnownTypes.Special\Decorators\PackedDateTimeSerializerStrategyDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata.Internal\Attributes\DecoratorHandlerAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata.Internal\Attributes\KnownTypeSerializerAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Attributes\CompressAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Attributes\DontReadAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Attributes\DontTerminateAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Attributes\DontWriteAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Attributes\EnumStringAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Attributes\InformationHandlingFlags.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Attributes\KnownSizeAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Attributes\Polymorphism\DefaultChildAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Attributes\Polymorphism\WireDataContractBaseTypeAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Attributes\Polymorphism\WireDataContractBaseTypeByFlagsAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Attributes\Polymorphism\WireDataContractBaseTypeRuntimeLinkAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Attributes\ReverseDataAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Attributes\SendSizeAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Attributes\WireDataContractAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Attributes\WireMemberAttribute.cs" />
+    <Compile Include="FreecraftCore.Serializer.Metadata\Events\ISerializationEventListener.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream.Default\DefaultStreamManipulationStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream.Default\Reader\DefaultStreamReaderStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream.Default\Reader\DefaultStreamReaderStrategyAsync.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream.Default\Writer\DefaultStreamWriterStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream.Default\Writer\DefaultStreamWriterStrategyAsync.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Extensions\IWireMemberStreamReaderStrategyAsyncExtensions.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Extensions\IWireMemberStreamReaderStrategyExtensions.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Read\Decorators\async\BufferedPeekWireStreamReaderStrategyDecoratorAsync.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Read\Decorators\async\OneTimeReadReaderStrategyAsync.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Read\Decorators\async\PeekOnlyWireStreamReaderStrategyAsync.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Read\Decorators\async\PrependBytesStreamReaderStrategyAsync.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Read\Decorators\async\ReverseEndianReadReaderStrategyAsync.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Read\Decorators\BufferedPeekWireStreamReaderStrategyDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Read\Decorators\OneTimeReadReaderStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Read\Decorators\PeekOnlyWireStreamReaderStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Read\Decorators\PrependBytesStreamReaderStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Read\Decorators\ReverseEndianReadReaderStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Read\Decorators\WireMemberReaderStrategyDecorator.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Read\IWireMemberReaderStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Read\IWireMemberReaderStrategyAsync.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Write\IWireMemberWriterStrategy.cs" />
+    <Compile Include="FreecraftCore.Serializer.Stream\Write\IWireMemberWriterStrategyAsync.cs" />
+    <Compile Include="FreecraftCore.Serializer\SerializerService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FreecraftCore.Serializer.API\FreecraftCore.Serializer.API.v2.ncrunchproject" />
+    <None Include="FreecraftCore.Serializer.Core\FreecraftCore.Serializer.Core.v2.ncrunchproject" />
+    <None Include="FreecraftCore.Serializer.KnownTypes.Decorators\FreecraftCore.Serializer.KnownTypes.Decorators.v2.ncrunchproject" />
+    <None Include="FreecraftCore.Serializer.KnownTypes.Primitives\FreecraftCore.Serializer.KnownTypes.Primitives.v2.ncrunchproject" />
+    <None Include="FreecraftCore.Serializer.Metadata.Internal\FreecraftCore.Serializer.Metadata.Internal.v2.ncrunchproject" />
+    <None Include="FreecraftCore.Serializer.Metadata\FreecraftCore.Serializer.Metadata.v2.ncrunchproject" />
+    <None Include="FreecraftCore.Serializer\FreecraftCore.Serializer.nuspec" />
+    <None Include="FreecraftCore.Serializer\FreecraftCore.Serializer.v2.ncrunchproject" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FreecraftCore.Network.Routing.Auth\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
